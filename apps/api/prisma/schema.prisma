@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./db.db"
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  email    String @unique
+  password String @unique
+  boxs     Box[]
+  payments Payment[]
+}
+
+model Box {
+  id             Int       @id @default(autoincrement())
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  countFraise    Int       @default(0)
+  eclairage      Boolean   @default(false)
+  pourcentageAir Int       @default(0)
+  location       String
+  user           User?     @relation(fields: [userId], references: [id])
+  userId         Int?
+  payments       Payment[]
+}
+
+model Payment {
+  id        Int       @id @default(autoincrement())
+  item      String
+  quantity  Int
+  createdAt DateTime  @default(now())
+  user      User?     @relation(fields: [userId], references: [id])
+  userId    Int?
+  box       Box?      @relation(fields: [boxId], references: [id])
+  boxId     Int?
+}
