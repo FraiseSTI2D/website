@@ -6,7 +6,7 @@ type TAuthLink = {
 }
 
 export function AuthLink({ classes, isAuth }: TAuthLink) {
-  return isAuth ? (
+  return !isAuth ? (
     <>
       <NavLink to="/auth/login" className={classes.link}>
         Connexion

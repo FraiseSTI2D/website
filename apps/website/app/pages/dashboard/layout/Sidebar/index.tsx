@@ -1,23 +1,18 @@
-import { useState } from 'react'
-import { Navbar, Group, Code } from '@mantine/core'
+import { Navbar, Group } from '@mantine/core'
 import {
-  BellRinging,
-  Fingerprint,
-  Key,
-  Settings,
-  TwoFA,
-  DatabaseImport,
-  Receipt2,
-  SwitchHorizontal,
+  Box,
   Home,
   ArrowBackUp,
   Logout,
   Icon,
   Adjustments,
   Map2,
+  Wallet,
+  ReportAnalytics,
 } from 'tabler-icons-react'
 import { useStyles } from './Sidebar.style'
 import { NavLink } from 'remix'
+import { SidebarSubLink } from './SidebarSubLink'
 
 export type TSidebarLink = {
   link: string
@@ -25,16 +20,46 @@ export type TSidebarLink = {
   icon: Icon
 }
 
+type TLinkWithSubLinkSideBar = {
+  icon: Icon
+  title: string
+  sublinks: TSidebarLink[]
+}
+
 export function Sidebar() {
-  const data: TSidebarLink[] = [
+  const sidebarLinks: TSidebarLink[] = [
     { link: '/dashboard', label: 'Accueil Dashboard', icon: Home },
-    { link: '/dashboard/maps', label: 'Carte de vos boxs', icon: Map2 },
     { link: '/dashboard/settings', label: 'Paramètres', icon: Adjustments },
+  ]
+
+  const linkWithSublinks: TLinkWithSubLinkSideBar[] = [
+    {
+      title: 'Boxs',
+      icon: Box,
+      sublinks: [
+        { link: '/dashboard/boxs', label: 'Vos boxs', icon: Box },
+        {
+          link: '/dashboard/boxs/stats',
+          label: 'Stastiques de vos boxs',
+          icon: ReportAnalytics,
+        },
+        {
+          link: '/dashboard/boxs/maps',
+          label: 'Carte de vos boxs',
+          icon: Map2,
+        },
+        {
+          link: '/dashboard/boxs/payments',
+          label: 'Payments sur vos boxs',
+          icon: Wallet,
+        },
+      ],
+    },
   ]
 
   const { classes, cx } = useStyles()
 
-  const links = data.map(item => (
+  const links = sidebarLinks.map(item => (
     <NavLink
       className={({ isActive }) => cx(classes.link, isActive)}
       to={item.link}
@@ -50,6 +75,9 @@ export function Sidebar() {
       <Navbar.Section grow>
         <Group className={classes.header} position="apart"></Group>
         {links}
+        {linkWithSublinks.map(({ sublinks, title, icon }) => (
+          <SidebarSubLink Icon={icon} items={sublinks} label={title} />
+        ))}
       </Navbar.Section>
 
       <Navbar.Section className={classes.footer}>

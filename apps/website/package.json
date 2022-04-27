@@ -1,5 +1,5 @@
 {
-  "name": "fraisesti2d-website",
+  "name": "website",
   "version": "1.0.0",
   "description": "Fraise STI2D website",
   "main": "src/index.tsx",

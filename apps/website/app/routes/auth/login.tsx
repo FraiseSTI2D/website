@@ -62,7 +62,7 @@ export default function LoginPage() {
           mt="md"
           size="md"
         />
-        <Button color="red" fullWidth mt="xl" size="md">
+        <Button type="submit" color="red" fullWidth mt="xl" size="md">
           Connexion
         </Button>
 
@@ -101,7 +101,7 @@ export default function LoginPage() {
           mt="md"
           size="md"
         />
-        <Button color="red" fullWidth mt="xl" size="md">
+        <Button type="submit" color="red" fullWidth mt="xl" size="md">
           Connexion
         </Button>
 

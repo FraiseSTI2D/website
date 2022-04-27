@@ -2,7 +2,12 @@ import { AppShell, Space } from '@mantine/core'
 import { useBooleanToggle } from '@mantine/hooks'
 import { LoaderFunction, useLoaderData } from 'remix'
 import { Footer, ScrollToTop, Main } from '~/components/layouts'
-import { useStyles, HeaderWithHero, StatsSection } from '~/pages/Home'
+import {
+  useStyles,
+  HeaderWithHero,
+  StatsSection,
+  FaqSection,
+} from '~/pages/Home'
 import { TStats } from '@fraise-sti2d/types'
 import { useStats } from '~/utils/hooks'
 import { useIsAuth } from '~/utils/hooks'
@@ -41,6 +46,7 @@ export default function HomePage() {
       <Main classes={classes}>
         <StatsSection stats={stats} />
         <Space h="xl" />
+        <FaqSection />
       </Main>
       <ScrollToTop />
       <Footer />

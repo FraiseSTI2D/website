@@ -1,11 +1,4 @@
-import {
-  Header as HeaderMantine,
-  Container,
-  Burger,
-  Group,
-  ActionIcon,
-  Anchor,
-} from '@mantine/core'
+import { Container, Burger, Group, ActionIcon, Anchor } from '@mantine/core'
 import { NavLink } from 'remix'
 import { Mail, BrandGithub } from 'tabler-icons-react'
 import { Image } from '~/components/base/Image'
@@ -41,21 +34,21 @@ export function Header({
         />
       </div>
 
-      <Group spacing={1} className={classes.links}>
+      <Group spacing="lg" className={classes.links}>
         <NavLink to="/" className={classes.link}>
           Accueil
         </NavLink>
         <NavLink to="project" className={classes.link}>
-          Projet
+          Notre Projet ?
         </NavLink>
         <NavLink to="opensource" className={classes.link}>
-          OpenSource
+          Open Source
         </NavLink>
         <AuthLink isAuth={isAuth} classes={classes} />
       </Group>
 
       <Group spacing={0} className={classes.social} position="right" noWrap>
-        <Anchor href="">
+        <Anchor href="https://github.com/FraiseSTI2D">
           <ActionIcon size="lg">
             <BrandGithub size={18} />
           </ActionIcon>
