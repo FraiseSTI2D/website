@@ -1,5 +1,5 @@
 import { ActionIcon, Anchor, Container, Group, Text } from '@mantine/core'
-import { Mail } from 'tabler-icons-react'
+import { BrandGithub, Mail } from 'tabler-icons-react'
 import { Image } from '~/components/base'
 import useStyles from './Footer.style'
 
@@ -23,6 +23,11 @@ export function Footer() {
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
+          <Anchor href="https://github.com/FraiseSTI2D">
+            <ActionIcon style={{ color: 'black' }} size="lg">
+              <BrandGithub size={18} />
+            </ActionIcon>
+          </Anchor>
           <Anchor href="mailto:fraisesti2d@gmail.com">
             <ActionIcon style={{ color: 'black' }} size="lg">
               <Mail size={18} />

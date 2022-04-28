@@ -1,8 +1,7 @@
 import { TCredentials } from '~/utils/types'
 import axios from 'axios'
 import { API_URL } from '~/utils/constants'
-
-export type User = { username: string }
+import { User } from '@fraise-sti2d/types'
 
 export async function useLogin(
   credentiels: TCredentials
@@ -20,15 +19,16 @@ export async function useLogin(
 
   if (status === 403) return { error: 'Unauthorized', data: null }
 
-  const { status: profileStats, data: profileData } = await axios.get<{
-    username: string
-  }>(`${API_URL}/auth/profile`, {
-    withCredentials: true,
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${data.access_token}`,
-    },
-  })
+  const { status: profileStats, data: profileData } = await axios.get<User>(
+    `${API_URL}/auth/profile`,
+    {
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${data.access_token}`,
+      },
+    }
+  )
 
   if (profileStats === 403) return { error: 'Unauthorized', data: null }
 

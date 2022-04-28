@@ -6,11 +6,12 @@ export const useStyles = createStyles((theme, _params, getRef) => {
   return {
     wrapper: {
       paddingTop: theme.spacing.xl * 2,
-      minHeight: 820,
-      backgroundImage: `radial-gradient(${theme.colors.red[6]} 0%, ${theme.colors.red[4]} 100%)`,
+      minHeight: 480,
+      backgroundImage: `linear-gradient(-60deg, ${theme.colors.red[4]} 0%, ${theme.colors.red[7]} 100%)`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'top left',
       position: 'relative',
+      borderRadius: theme.radius.md,
     },
 
     title: {

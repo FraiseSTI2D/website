@@ -10,11 +10,11 @@ import {
 } from 'remix'
 import * as React from 'react'
 import { MantineProvider } from '@mantine/core'
-import { SocketIoProvider } from './modules/socket.io'
 import io from 'socket.io-client'
 
 import globalStylesUrl from './styles/global.css'
 import { API_URL } from './utils/constants'
+import { SocketIoProvider } from './modules/socket.io'
 
 export const links: LinksFunction = () => {
   return [
