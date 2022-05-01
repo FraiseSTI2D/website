@@ -130,6 +130,7 @@ importers:
       compression: ^1.7.4
       cross-env: ^7.0.3
       express: ^4.17.1
+      google-maps: ^4.3.3
       morgan: ^1.10.0
       nodemon: ^2.0.15
       npm-run-all: ^4.1.5
@@ -139,7 +140,6 @@ importers:
       remix: ^1.4.0
       socket.io-client: ^4.4.1
       tabler-icons-react: 1.43.0
-      ts-invariant: ^0.9.4
       typescript: ^4.5.5
     dependencies:
       '@fraise-sti2d/types': link:../../libs/types
@@ -157,6 +157,7 @@ importers:
       compression: 1.7.4
       cross-env: 7.0.3
       express: 4.17.3
+      google-maps: 4.3.3
       morgan: 1.10.0
       npm-run-all: 4.1.5
       react: 17.0.2
@@ -165,7 +166,6 @@ importers:
       remix: 1.4.1
       socket.io-client: 4.5.0
       tabler-icons-react: 1.43.0_react@17.0.2
-      ts-invariant: 0.9.4
     devDependencies:
       '@playwright/test': 1.21.1
       '@remix-run/dev': 1.4.1_react-dom@17.0.2+react@17.0.2
@@ -2508,6 +2508,11 @@ packages:
       '@types/minimatch': 3.0.5
       '@types/node': 17.0.26
     dev: true
+
+  /@types/googlemaps/3.43.3:
+    resolution: {integrity: sha512-ZWNoz/O8MPEpiajvj7QiqCY8tTLFNqNZ/a+s+zTV58wFVNAvvqV4bdGfnsjTb5Cs4V6wEsLrX8XRhmnyYJ2Tdg==}
+    deprecated: 'Types for the Google Maps browser API have moved to @types/google.maps. Note: these types are not for the googlemaps npm package, which is a Node API.'
+    dev: false
 
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
@@ -5547,6 +5552,12 @@ packages:
       merge2: 1.4.1
       slash: 3.0.0
     dev: true
+
+  /google-maps/4.3.3:
+    resolution: {integrity: sha512-MQbEgBNQbGyV7mfS2tlFgW4EoGKLia24BvAl4a+kgsYWt4283kyPpaay/yKIsScQLr7nSUONaLNfOdMsCuJDEw==}
+    dependencies:
+      '@types/googlemaps': 3.43.3
+    dev: false
 
   /got/11.8.3:
     resolution: {integrity: sha512-7gtQ5KiPh1RtGS9/Jbv1ofDpBFuq42gyfEib+ejaRBJuj/3tQFeR5+gw57e4ipaU8c/rCjvX6fkQz2lyDlGAOg==}
@@ -10266,13 +10277,6 @@ packages:
   /trough/2.1.0:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: true
-
-  /ts-invariant/0.9.4:
-    resolution: {integrity: sha512-63jtX/ZSwnUNi/WhXjnK8kz4cHHpYS60AnmA6ixz17l7E12a5puCWFlNpkne5Rl0J8TBPVHpGjsj4fxs8ObVLQ==}
-    engines: {node: '>=8'}
-    dependencies:
-      tslib: 2.4.0
-    dev: false
 
   /ts-jest/27.1.4_9985e1834e803358b7be1e6ce5ca0eea:
     resolution: {integrity: sha512-qjkZlVPWVctAezwsOD1OPzbZ+k7zA5z3oxII4dGdZo5ggX/PL7kvwTM0pXTr10fAtbiVpJaL3bWd502zAhpgSQ==}

@@ -59,10 +59,12 @@ export default createStyles(theme => ({
 
   link: {
     display: 'block',
-    color: theme.colors.gray[6],
-    fontSize: theme.fontSizes.sm,
+    color: 'black',
+    fontSize: theme.fontSizes.md,
     paddingTop: 3,
     paddingBottom: 3,
+    textDecoration: 'none',
+    transition: '1s',
 
     '&:hover': {
       textDecoration: 'underline',
