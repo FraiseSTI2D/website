@@ -3,10 +3,6 @@ import {
   Inject,
   Get,
   UseGuards,
-  Param,
-  ParseIntPipe,
-  Delete,
-  Put,
   Body,
   Post,
 } from '@nestjs/common'
@@ -35,7 +31,7 @@ export class PaymentsController {
     return await this.paymentsService.create(data)
   }
 
-  @Get('/key')
+  @Get('key')
   async getKeyPayment() {
     return {
       stripeKey: this.configService.get('STRIPE_PUBLIC_KEY'),

@@ -8,7 +8,6 @@ import {
   Title,
 } from '@mantine/core'
 import { ActionFunction, Form, LoaderFunction, redirect } from 'remix'
-import { EyeCheck, EyeOff, Lock } from 'tabler-icons-react'
 import { useStyles } from '~/pages/auth/register'
 import { useRegister } from '~/utils/hooks'
 import { getSession } from '~/utils/session'

@@ -8,11 +8,10 @@ import {
   Body
 } from '@nestjs/common'
 import { IAuthService } from '../interfaces'
-import { LocalAuthGuard } from '../guards'
+import { LocalAuthGuard, JwtAuthGuard } from '../guards'
 import { Services } from '@utils/constants'
 import { PrismaService } from '@modules/prisma/prisma.service'
 import { Request } from 'express'
-import { JwtAuthGuard } from '../guards/jwt-auth.guard'
 import { CreateUserDto } from '@modules/users'
 
 @Controller('auth')
@@ -22,13 +21,13 @@ export class AuthController {
     @Inject(Services.Prisma) private readonly prisma: PrismaService
   ) {}
 
-  @Post('/register')
+  @Post('register')
   async register(@Body() data: CreateUserDto) {
     return await this.authService.register(data)
   }
 
   @UseGuards(LocalAuthGuard)
-  @Post('/login')
+  @Post('login')
   login(@Req() req: Request) {
     return this.authService.login(req.user)
   }

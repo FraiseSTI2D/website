@@ -11,7 +11,7 @@ import {
   Post
 } from '@nestjs/common'
 import { IBoxsService } from '../interfaces'
-import { JwtAuthGuard } from '~/routes/auth/guards/jwt-auth.guard'
+import { JwtAuthGuard } from '~/routes/auth/guards'
 import { Prisma } from '@prisma/client'
 import { Services } from '@utils/constants'
 

@@ -8,7 +8,7 @@ export class IndexController {
     @Inject(Services.Index) private readonly indexService: IIndexService
   ) {}
 
-  @Get('/stats')
+  @Get('stats')
   async getStats() {
     return await this.indexService.stats()
   }

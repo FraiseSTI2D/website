@@ -1,10 +1,7 @@
 import { AppShell } from '@mantine/core'
-import {
-  useStyles,
-  HeaderWithHero,
-} from '~/pages/releases'
+import { useStyles } from '~/pages/Releases'
 import { useBooleanToggle } from '@mantine/hooks'
-import { Footer, ScrollToTop, Main } from '~/components/layouts'
+import { Footer, ScrollToTop, Main, Header } from '~/components/layouts'
 import { LoaderFunction, useLoaderData } from 'remix'
 import { useIsAuth } from '~/utils/hooks'
 
@@ -25,18 +22,16 @@ export default function ProjectPage() {
   const { classes } = useStyles()
   const [opened, toggleOpened] = useBooleanToggle()
   return (
-    <AppShell
+    <AppShell 
       header={
-        <HeaderWithHero
-          isAuth={isAuth}
-          opened={opened}
-          toggleOpened={toggleOpened}
+        <Header 
+          opened={opened} 
+          toggleOpened={toggleOpened} 
+          isAuth={isAuth} 
         />
       }
     >
-      <Main classes={classes}>
-        
-      </Main>
+      <Main classes={classes}></Main>
       <ScrollToTop />
       <Footer />
     </AppShell>

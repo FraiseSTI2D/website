@@ -1,4 +1,4 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common'
+import { Inject, Injectable } from '@nestjs/common'
 import { PrismaService } from '@modules/prisma'
 import { Services } from '@utils/constants'
 import { IPaymentsService } from '../interfaces'

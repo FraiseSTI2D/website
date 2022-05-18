@@ -1,13 +1,14 @@
 import { Card, Group, Overlay, Text, useMantineTheme } from '@mantine/core'
-import useStyles from './CardImage.style'
+import useStyles from './Card.style'
 
 export type TCardImageProps = {
   img: string
   title: string
   description: string
+  pourcentage: number
 }
 
-export function CardImage({ img, title, description }: TCardImageProps) {
+export function CardImage({ img, title, description, pourcentage }: TCardImageProps) {
   const { classes } = useStyles()
   const theme = useMantineTheme()
 
@@ -32,6 +33,8 @@ export function CardImage({ img, title, description }: TCardImageProps) {
           <Text size="sm" className={classes.description}>
             {description}
           </Text>
+
+          <Progress color="red" className={classes.action} value={pourcentage} label={`${pourcentage}%`} radius="xl" />
         </div>
       </Card>
     </Group>

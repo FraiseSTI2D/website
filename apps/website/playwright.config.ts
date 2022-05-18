@@ -9,13 +9,12 @@ const config: PlaywrightTestConfig = {
   expect: {
     timeout: 5000
   },
-  forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
     actionTimeout: 0,
-    baseURL: 'http://localhost:3000',
+    baseURL: `http://localhost:${process.env.PORT}`,
     trace: 'on-first-retry',
   },
 
@@ -71,7 +70,7 @@ const config: PlaywrightTestConfig = {
   ],
   outputDir: 'test-results/',
   webServer: {
-    port: 3000,
+    port: process.env.PORT,
   },
 };
 

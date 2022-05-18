@@ -4,6 +4,8 @@ import * as session from 'express-session'
 import * as passport from 'passport'
 import * as compression from 'compression'
 import { ValidationPipe } from '@nestjs/common'
+import dotenv from 'dotenv'
+dotenv.config()
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
@@ -25,6 +27,6 @@ async function bootstrap() {
   )
   app.use(passport.initialize())
   app.use(passport.session())
-  await app.listen(3001)
+  await app.listen(process.env.PORT)
 }
 bootstrap()
