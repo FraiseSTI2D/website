@@ -1,4 +1,4 @@
 export * from './useOpenMounted'
-export * from './useBox'
+export * from './boxs'
 export * from './useStats'
 export * from './auth'

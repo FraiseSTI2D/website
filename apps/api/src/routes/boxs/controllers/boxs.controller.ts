@@ -15,7 +15,6 @@ import { JwtAuthGuard } from '~/routes/auth/guards'
 import { Prisma } from '@prisma/client'
 import { Services } from '@utils/constants'
 
-@UseGuards(JwtAuthGuard)
 @Controller('boxs')
 export class BoxsController {
   constructor(
@@ -27,9 +26,9 @@ export class BoxsController {
     return await this.boxsService.find()
   }
 
-  @Post()
-  async createBox(@Body() data: Prisma.BoxUncheckedCreateInput) {
-    return await this.boxsService.create(data)
+  @Get('random')
+  async getRandomBox() {
+    return await this.boxsService.random()
   }
 
   @Get(':id')
@@ -37,6 +36,13 @@ export class BoxsController {
     return await this.boxsService.findOne(id)
   }
 
+  @UseGuards(JwtAuthGuard)
+  @Post()
+  async createBox(@Body() data: Prisma.BoxUncheckedCreateInput) {
+    return await this.boxsService.create(data)
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Put(':id')
   async updateBox(
     @Param('id', ParseIntPipe) id: number,
@@ -45,6 +51,7 @@ export class BoxsController {
     return await this.boxsService.update(id, data)
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async deleteBox(@Param('id', ParseIntPipe) id: number) {
     return await this.boxsService.delete(id)

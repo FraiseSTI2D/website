@@ -18,6 +18,9 @@ const config: PlaywrightTestConfig = {
     trace: 'on-first-retry',
   },
   outputDir: 'test-results/',
+  webServer: {
+    port: process.env.PORT
+  }
 };
 
 export default config;

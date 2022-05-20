@@ -10,6 +10,19 @@ export class BoxsService implements IBoxsService {
   constructor(
     @Inject(Services.Prisma) private readonly prismaService: PrismaService
   ) {}
+
+  async random(): Promise<Box> {
+    const productsCount = await this.prismaService.box.count();
+    const skip = Math.floor(Math.random() * productsCount);
+    return await this.prismaService.box.findMany({
+        take: 1,
+        skip: skip,
+        orderBy: {
+            sellingCount: 'desc',
+        },
+    });
+  }
+
   async find(): Promise<Box[]> {
     return await this.prismaService.box.findMany({
       select: boxSelect,

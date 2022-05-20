@@ -4,6 +4,7 @@ import { useBooleanToggle } from '@mantine/hooks'
 import { Footer, ScrollToTop, Main, Header } from '~/components/layouts'
 import { LoaderFunction, useLoaderData } from 'remix'
 import { useIsAuth } from '~/utils/hooks'
+import { ColorsSections, LogosSections } from '~/pages/Branding/sections'
 
 interface LoaderData {
   isAuth: boolean
@@ -31,7 +32,10 @@ export default function ProjectPage() {
         />
       }
     >
-      <Main classes={classes}></Main>
+      <Main classes={classes}>
+        <LogosSections />
+        <ColorsSections />
+      </Main>
       <ScrollToTop />
       <Footer />
     </AppShell>

@@ -10,8 +10,7 @@ import {
   ContactSection,
 } from '~/pages/Home'
 import { TStats, User } from '@fraise-sti2d/types'
-import { useStats, useUser } from '~/utils/hooks'
-import { useIsAuth } from '~/utils/hooks'
+import { useStats, useUser, useIsAuth } from '~/utils/hooks'
 import { useSocket } from '~/modules/socket.io/hooks'
 import { useEffect, useState } from 'react'
 

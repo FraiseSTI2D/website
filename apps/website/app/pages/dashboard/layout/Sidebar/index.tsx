@@ -59,22 +59,20 @@ export function Sidebar() {
 
   const { classes, cx } = useStyles()
 
-  const links = sidebarLinks.map(item => (
-    <NavLink
-      className={({ isActive }) => cx(classes.link, isActive)}
-      to={item.link}
-      key={item.label}
-    >
-      <item.icon className={classes.linkIcon} />
-      <span>{item.label}</span>
-    </NavLink>
-  ))
-
   return (
     <Navbar height={700} width={{ sm: 300 }}>
       <Navbar.Section grow>
         <Group className={classes.header} position="apart"></Group>
-        {links}
+        {sidebarLinks.map(item => (
+          <NavLink
+            className={({ isActive }) => cx(classes.link, isActive)}
+            to={item.link}
+            key={item.label}
+          >
+            <item.icon className={classes.linkIcon} />
+            <span>{item.label}</span>
+          </NavLink>
+        ))}
         {linkWithSublinks.map(({ sublinks, title, icon }) => (
           <SidebarSubLink Icon={icon} items={sublinks} label={title} />
         ))}
