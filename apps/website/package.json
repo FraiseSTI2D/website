@@ -4,7 +4,7 @@
   "description": "Fraise STI2D website",
   "main": "src/index.tsx",
   "dependencies": {
-    "@fraise-sti2d/types": "workspace:^1.0.0",
+    "@fraise-sti2d/types": "^1.0.0",
     "@mantine/core": "^3.6.7",
     "@mantine/dropzone": "^3.6.7",
     "@mantine/hooks": "^3.6.7",
