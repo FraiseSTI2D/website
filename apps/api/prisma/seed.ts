@@ -14,6 +14,7 @@ async function main() {
       boxs: {
         create: [
           {
+            location: '',
             countFraise: 5,
             eclairage: false,
             payments: {

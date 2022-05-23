@@ -14,6 +14,8 @@ CREATE TABLE "Box" (
     "countFraise" INTEGER NOT NULL DEFAULT 0,
     "eclairage" BOOLEAN NOT NULL DEFAULT false,
     "pourcentageAir" INTEGER NOT NULL DEFAULT 0,
+    "location" TEXT NOT NULL,
+    "likes" INTEGER NOT NULL DEFAULT 0,
     "userId" INTEGER,
     CONSTRAINT "Box_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );

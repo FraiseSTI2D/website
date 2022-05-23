@@ -8,6 +8,7 @@ import { PaymentsModule } from './routes/payments'
 @Module({
   imports: [
     ConfigModule.forRoot({
+      envFilePath: '.env',
       isGlobal: true,
     }),
     BoxsModule,

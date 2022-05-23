@@ -6,6 +6,8 @@ export const boxSelect = {
   countFraise: true,
   eclairage: true,
   pourcentageAir: true,
+  location: true,
+  likes: true,
   user: {
     select: {
       id: true,

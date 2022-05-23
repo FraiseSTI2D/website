@@ -7,7 +7,7 @@ const config: PlaywrightTestConfig = {
   testDir: './tests',
   timeout: 30000,
   expect: {
-    timeout: 5000
+    timeout: 5000,
   },
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
@@ -70,8 +70,9 @@ const config: PlaywrightTestConfig = {
   ],
   outputDir: 'test-results/',
   webServer: {
-    port: process.env.PORT,
+    port: process.env.PORT as unknown as number,
+    command: 'yarn dev',
   },
-};
+}
 
-export default config;
+export default config

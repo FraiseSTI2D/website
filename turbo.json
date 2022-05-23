@@ -11,7 +11,8 @@
       "cache": false
     },
     "test:e2e": {
-      "outputs": []
+      "outputs": [],
+      "cache": false
     }
   }
 }
