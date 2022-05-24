@@ -21,6 +21,11 @@ export class IndexService implements IIndexService {
         description: 'Nombres de boxs en circulation',
         count: await this.prismaService.box.count(),
       },
+      {
+        title: 'Payments',
+        description: 'Nombres de transactions vers les différents boxs',
+        count: await this.prismaService.payment.count()
+      }
     ]
   }
 }

@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common'
-import { Services } from '~/common/utils/constants'
-import { PrismaService } from './prisma.service'
+import { Services } from '@utils/constants'
+import { PrismaService } from '.'
+import { PrismaGateway } from './prisma.gateway'
+
 
 const providersAndExports = [
   {
@@ -10,7 +12,10 @@ const providersAndExports = [
 ]
 
 @Module({
-  providers: providersAndExports,
+  providers: [
+    ...providersAndExports,
+    PrismaGateway
+  ],
   exports: providersAndExports
 })
 export class PrismaModule {}

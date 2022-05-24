@@ -17,6 +17,6 @@ import { Gateways, Services } from '@utils/constants'
       provide: Gateways.Box,
       useClass: BoxsGateway
     }
-  ]
+  ],
 })
 export class BoxsModule {}

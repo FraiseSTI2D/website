@@ -12,12 +12,10 @@ export class BoxsService implements IBoxsService {
   ) {}
 
   async random(): Promise<Box[]> {
-    const productsCount = await this.prismaService.box.count()
-    const skip = Math.floor(Math.random() * productsCount)
-    return await this.prismaService.box.findMany({
-      take: 1,
-      skip: skip,
-    })
+    const randomValue = Math.floor(Math.random() *  await this.prismaService.box.count())
+    return await this.prismaService.box.findUnique({
+      select: boxSelect,
+    })[randomValue]
   }
 
   async find(): Promise<Box[]> {

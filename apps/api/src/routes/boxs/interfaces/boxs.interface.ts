@@ -1,5 +1,4 @@
-import { Prisma } from '@prisma/client'
-import { Box } from '@prisma/client'
+import { Prisma, Box } from '@prisma/client'
 
 export interface IBoxsService {
   find(): Promise<Box[]>
